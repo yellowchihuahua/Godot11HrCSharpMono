@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx8fmoo4iglqb"]
+
+[ext_resource type="Script" path="res://scenes/levels/level.cs" id="1_deiih"]
+[ext_resource type="Texture2D" uid="uid://bymmqja8sc8q8" path="res://icon.svg" id="1_rs4g5"]
+[ext_resource type="Script" path="res://scenes/Logo.cs" id="2_bgshj"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_deiih")
+
+[node name="Logo" type="Sprite2D" parent="."]
+texture = ExtResource("1_rs4g5")
+region_rect = Rect2(14, 23.5, 140, 124)
+script = ExtResource("2_bgshj")
