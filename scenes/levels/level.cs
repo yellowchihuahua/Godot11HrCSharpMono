@@ -29,7 +29,9 @@ public partial class Level : Node2D
 		if (logo.Position.X > 500) {
 			logoScript.pos.X = 0;
 		}
+	}
 
-		GD.Print(Input.IsActionPressed("left"));
+	public void TestFunction(){
+		GD.Print("hi i'm level");
 	}
 }

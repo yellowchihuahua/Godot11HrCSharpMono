@@ -13,5 +13,5 @@ texture = ExtResource("1_rs4g5")
 region_rect = Rect2(14, 23.5, 140, 124)
 script = ExtResource("2_bgshj")
 
-[node name="Player" parent="Logo" instance=ExtResource("4_gatay")]
+[node name="Player" parent="." instance=ExtResource("4_gatay")]
 position = Vector2(359, 274)
