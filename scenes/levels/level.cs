@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class level : Node2D
+public partial class Level : Node2D
 {
 	Node2D logo;
 	Logo logoScript;
@@ -29,5 +29,7 @@ public partial class level : Node2D
 		if (logo.Position.X > 500) {
 			logoScript.pos.X = 0;
 		}
+
+		GD.Print(Input.IsActionPressed("left"));
 	}
 }
