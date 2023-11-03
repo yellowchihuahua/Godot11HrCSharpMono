@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class player : CharacterBody2D
+public partial class Player : CharacterBody2D
 {
 
 	// Called when the node enters the scene tree for the first time.

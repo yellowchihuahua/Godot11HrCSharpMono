@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://rnag5vjgfl7"]
 
-[ext_resource type="Script" path="res://scenes/enemies/drone.cs" id="1_hfcm4"]
+[ext_resource type="Script" path="res://scenes/enemies/Drone.cs" id="1_14bsr"]
 [ext_resource type="Texture2D" uid="uid://cw7lcf4urdyv8" path="res://graphics/enemies/drone.png" id="1_n4wxk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yetc4"]
 radius = 66.2873
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_hfcm4")
+script = ExtResource("1_14bsr")
 
 [node name="Drone" type="Sprite2D" parent="."]
 texture = ExtResource("1_n4wxk")
