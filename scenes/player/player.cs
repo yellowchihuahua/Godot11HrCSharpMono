@@ -4,10 +4,18 @@ using System;
 public partial class Player : CharacterBody2D
 {
 
+	bool _canLaser = true;
+	bool _canGrenade = true;
+
+	Timer _laserTimer;
+	Timer _grenadeTimer;
+
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-
+		_laserTimer = GetNode<Timer>("LaserTimer");
+		_grenadeTimer = GetNode<Timer>("GrenadeTimer");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,15 +28,26 @@ public partial class Player : CharacterBody2D
 		MoveAndSlide();
 
 		//laser shooting input
-		if (Input.IsActionPressed("primary action")) {
+		if (Input.IsActionPressed("primary action") && _canLaser) {
 			GD.Print("shoot laser");
+			_canLaser = false;
+			_laserTimer.Start();
 		}
 
 		//grenade shooting input
-		if (Input.IsActionPressed("secondary action")) {
+		if (Input.IsActionPressed("secondary action") && _canGrenade) {
 			GD.Print("shoot grenade");
+			_canGrenade = false;
+			_grenadeTimer.Start();
 		}
+	}
 
+	//connected to WeaponTimer
+	private void OnLaserTimerTimeout(){
+		_canLaser = true;
+	}
 
+	private void OnGrenadeTimerTimeout(){
+		_canGrenade = true;
 	}
 }
