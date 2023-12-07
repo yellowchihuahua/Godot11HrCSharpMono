@@ -21,14 +21,14 @@ public partial class Level : Node2D
 
 	}
 
-	private void OnArea2DEntranceBodyEntered(Node2D body){
-		GD.Print("Body Entered");
-		GD.Print(body.Name);
-	}
-
-	private void OnArea2DEntranceBodyExited(Node2D body){
-		GD.Print("Body Exited");
-		GD.Print(body.Name);
-	}
+	//private void OnArea2DEntranceBodyEntered(Node2D body){
+	//	GD.Print("Body Entered");
+	//	GD.Print(body.Name);
+	//}
+//
+	//private void OnArea2DEntranceBodyExited(Node2D body){
+	//	GD.Print("Body Exited");
+	//	GD.Print(body.Name);
+	//}
 
 }
