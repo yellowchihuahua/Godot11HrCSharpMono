@@ -3,6 +3,8 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
+	[Signal] public delegate void PlayerInputLaserEventHandler(Node2D body);
+	[Signal] public delegate void PlayerInputGrenadeEventHandler(Node2D body);
 
 	bool _canLaser = true;
 	bool _canGrenade = true;
@@ -29,16 +31,16 @@ public partial class Player : CharacterBody2D
 
 		//laser shooting input
 		if (Input.IsActionPressed("primary action") && _canLaser) {
-			GD.Print("shoot laser");
 			_canLaser = false;
 			_laserTimer.Start();
+			EmitSignal(SignalName.PlayerInputLaser);
 		}
 
 		//grenade shooting input
 		if (Input.IsActionPressed("secondary action") && _canGrenade) {
-			GD.Print("shoot grenade");
 			_canGrenade = false;
 			_grenadeTimer.Start();
+			EmitSignal(SignalName.PlayerInputGrenade);
 		}
 	}
 

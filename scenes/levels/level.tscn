@@ -12,3 +12,7 @@ position = Vector2(536, -191)
 
 [node name="Player" parent="." instance=ExtResource("4_gatay")]
 position = Vector2(431, 463)
+
+[connection signal="PlayerEnteredGate" from="Gate" to="." method="OnGatePlayerEnteredGate"]
+[connection signal="PlayerInputGrenade" from="Player" to="." method="OnPlayerPlayerInputGrenade"]
+[connection signal="PlayerInputLaser" from="Player" to="." method="OnPlayerPlayerInputLaser"]
